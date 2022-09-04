@@ -55,8 +55,6 @@ X_ros, y_ros = ros.fit_resample(thyroid_train[features], thyroid_train[target])
 #train and predict
 RF = sklearn.ensemble.RandomForestClassifier(n_estimators=32,criterion='gini',max_features='log2',max_depth=5,random_state=12)
 RF.fit(X_ros, y_ros)
-# XGB = XGBClassifier(random_state=32,max_depth=3,n_estimators=9)
-# XGB.fit(X_ros, y_ros)
 #读之前存储模型
 
 #with open('RF.pickle', 'rb') as f:
@@ -80,23 +78,4 @@ if st.button('Predict'):
     if result == 'Low Risk':
         st.balloons()
     st.markdown('## Probability:  '+str(prob)+'%')
-#st.markdown('## The risk of bone metastases is '+str(prob/0.0078*1000//1/1000)+' times higher than the average risk .')
-
-#排版占行
-
-
-
-# st.title("")
-# st.title("")
-# st.title("")
-# st.title("")
-#st.warning('This is a warning')
-#st.error('This is an error')
-
-#st.info('Information of the model: Auc: 0. ;Accuracy: 0. ;Sensitivity(recall): 0. ;Specificity :0. ')
-#st.success('Affiliation: The First Affiliated Hospital of Nanchang University, Nanchnag university. ')
-
-
-
-
-
+    
